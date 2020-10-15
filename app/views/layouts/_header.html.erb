@@ -1,6 +1,7 @@
 <div class="header">
-  <a href="#default" class="logo">Car Challenge App</a>
+  <a href="<%= root_path %>" class="logo">Car Challenge App</a>
   <div class="header-right">
+  	<a  class="active" href="<%= root_path %>">Home</a>
   	<%if !current_user %>
     <a href="<%= new_user_session_path %>">Log In</a>
     <a href="<%= new_user_registration_path %>">Register As Member</a>
