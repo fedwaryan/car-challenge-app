@@ -1,8 +1,6 @@
-<div class="header">
-  <a href="<%= root_path %>" class="logo">Car Challenge App</a>
-  <div class="header-right">
-  	<a  class="active" href="<%= root_path %>">Home</a>
-  	<%if !current_user %>
+<div class="topnav">
+  <a  class="active" href="<%= root_path %>">Home</a>
+    <%if !current_user %>
     <a href="<%= new_user_session_path %>">Log In</a>
     <a href="<%= new_user_registration_path %>">Register As Member</a>
     <%else%>
@@ -10,5 +8,5 @@
     <a href="<%= cars_path %>">Show All Cars</a>
     <%= link_to "Sign out", destroy_user_session_path, :method => :delete  , :class => "logout"%>
     <%end%>
-  </div>
+  <input type="text1" placeholder="Search..">
 </div>
