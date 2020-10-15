@@ -9,6 +9,13 @@
   <strong>Price:</strong>
   <%= @car.price %>
 </p>
-
-<%= link_to 'Edit', edit_car_path(@car) %> |
+<p>
+  <strong>Owner Name:</strong>
+  <%= @car.user.first_name %>&nbsp;<%= @car.user.last_name %>
+</p>
+<p>
+  <strong>Owner Profile pic:</strong>
+</p>
+<img src="<%= @car.user.profile_photo.url %>" alt="<%= @car.user.profile_photo.url %>" border=3 height=100 width=200></img>
+<br />
 <%= link_to 'Back', cars_path %>
