@@ -55,3 +55,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'pg'
 gem 'devise' #for user login / signup / session maintainance
 gem 'carrierwave' #for profile pic uploader
+gem "acts_as_follower", github: "tcocca/acts_as_follower"
+ #act as follower

@@ -3,8 +3,10 @@
   <p>Here You can make more friends.</p>
   <p>You can create cars , search cars and many more ....</p>
 </div>
+<br/>
 <%if current_user %>
-	<% @user.each do |user|%>
+	<h1  style="padding-left:20px">List of Users   You are logged in as <%= current_user.first_name%> <%= current_user.last_name%></h1>
+	<% @users.each do |user|%>
 	<div style="overflow-x:auto;">
 	  <table>
 	    <tr>
@@ -12,17 +14,25 @@
 	      <th>Last Name</th>
 	      <th>Email</th>
 	      <th>Profile Image</th>
+	      <th></th>
 	    </tr>
 	    <tr>
 	      <td><%= user.first_name%></td>
 	      <td><%= user.last_name%></td>
 	      <td><%= user.email%></td>
 	      <td><img src="<%= user.profile_photo.url %>" alt="<%= user.profile_photo.url %>" border=3 height=100 width=200></img></td>
+	      <td>
+	      	<%if current_user.following?(user) || user.following?(current_user) %>
+	      	<p> Already a friend </p>
+	      	<%else%>
+	      	<%= link_to "Add as friend", follow_path(user.id), :method => :post  , :class => "logout"%>
+	      	<%end%>
+	      </td>
 	    </tr>
 	  </table>
 	</div>
-
-
 	<%end%>
 <%end%>
+
+
 

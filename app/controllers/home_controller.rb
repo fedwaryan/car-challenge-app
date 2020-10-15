@@ -1,7 +1,7 @@
 class HomeController < ApplicationController
 	
 	def index
-		@user = User.all
+		@users = User.all_except(current_user)
 	end
 	
 end
