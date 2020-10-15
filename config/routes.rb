@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :cars
 	root 'home#index'
   devise_for :users
   get '/follow/:user_id' ,to: 'follows#follow' , as: :follow
