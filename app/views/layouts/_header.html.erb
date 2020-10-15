@@ -1,0 +1,11 @@
+<div class="header">
+  <a href="#default" class="logo">Car Challenge App</a>
+  <div class="header-right">
+  	<%if !current_user %>
+    <a href="<%= new_user_session_path %>">Log In</a>
+    <a href="<%= new_user_registration_path %>">Register As Member</a>
+    <%else%>
+    <%= link_to "Sign out", destroy_user_session_path, :method => :delete  , :class => "logout"%>
+    <%end%>
+  </div>
+</div>
