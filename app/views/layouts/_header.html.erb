@@ -1,12 +1,12 @@
 <div class="topnav">
   <a  class="active" href="<%= root_path %>">Home</a>
     <%if !current_user %>
-    <a href="<%= new_user_session_path %>">Log In</a>
-    <a href="<%= new_user_registration_path %>">Register As Member</a>
+        <a href="<%= new_user_session_path %>">Log In</a>
+        <a href="<%= new_user_registration_path %>">Register As Member</a>
     <%else%>
-    <a href="<%= new_car_path %>">Add New Car</a>
-    <a href="<%= cars_path %>">Show All Cars</a>
-    <%= link_to "Sign out", destroy_user_session_path, :method => :delete  , :class => "logout"%>
+        <a href="<%= new_car_path %>">Add New Car</a>
+        <a href="<%= cars_path %>">Show All Cars</a>
+        <%= link_to "Sign out", destroy_user_session_path, :method => :delete  , :class => "logout"%>
     <%end%>
   <input type="text1" placeholder="Search..">
 </div>

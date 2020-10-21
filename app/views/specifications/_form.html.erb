@@ -1,0 +1,122 @@
+<%= form_with(model: specification, local: true) do |form| %>
+  <% if specification.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(specification.errors.count, "error") %> prohibited this specification from being saved:</h2>
+
+      <ul>
+        <% specification.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :year %>
+    <%= form.text_field :year %>
+  </div>
+
+  <div class="field">
+    <%= form.label :seats %>
+    <%= form.text_field :seats %>
+  </div>
+
+  <div class="field">
+    <%= form.label :transmission %>
+    <%= form.text_field :transmission %>
+  </div>
+
+  <div class="field">
+    <%= form.label :propulsion %>
+    <%= form.text_field :propulsion %>
+  </div>
+
+  <div class="field">
+    <%= form.label :mileage %>
+    <%= form.text_field :mileage %>
+  </div>
+
+  <div class="field">
+    <%= form.label :engine %>
+    <%= form.text_field :engine %>
+  </div>
+
+  <div class="field">
+    <%= form.label :power %>
+    <%= form.text_field :power %>
+  </div>
+
+  <div class="field">
+    <%= form.label :price_per_day %>
+    <%= form.number_field :price_per_day %>
+  </div>
+
+  <div class="field">
+    <%= form.label :body_style %>
+    <%= form.text_field :body_style %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description_user %>
+    <%= form.text_field :description_user %>
+  </div>
+
+  <div class="field">
+    <%= form.label :city %>
+    <%= form.text_field :city %>
+  </div>
+
+  <div class="field">
+    <%= form.label :zipcode %>
+    <%= form.number_field :zipcode %>
+  </div>
+
+  <div class="field">
+    <%= form.label :country %>
+    <%= form.text_field :country %>
+  </div>
+
+  <div class="field">
+    <%= form.label :street %>
+    <%= form.text_field :street %>
+  </div>
+
+  <div class="field">
+    <%= form.label :type_name %>
+    <%= form.text_field :type_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :number_plate %>
+    <%= form.text_field :number_plate %>
+  </div>
+
+  <div class="field">
+    <%= form.label :slug %>
+    <%= form.text_area :slug %>
+  </div>
+
+  <div class="field">
+    <%= form.label :postal_code %>
+    <%= form.number_field :postal_code %>
+  </div>
+
+  <div class="field">
+    <%= form.label :car_grade_given_by_users %>
+    <%= form.text_field :car_grade_given_by_users %>
+  </div>
+
+  <div class="field">
+    <%= form.label :fuel_type %>
+    <%= form.text_field :fuel_type %>
+  </div>
+
+  <div class="field">
+    <%= form.hidden_field 'car_id', :value => @specification.car_id %>
+
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

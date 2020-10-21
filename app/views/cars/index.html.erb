@@ -20,6 +20,8 @@
         <td><%= car.price %></td>
         <td><%= car.user.first_name%> <%= car.user.last_name%></td>
         <td><img src="<%= car.user.profile_photo.url %>" alt="<%= car.user.profile_photo.url %>" border=3 height=100 width=200></img></td>
+        <td><%= link_to 'Add Specification', new_specification_path(car_id: car.id) %></td>
+        <td><%= link_to 'Check Specification', check_specs_path(car_id: car.id) %></td>
         <td><%= link_to 'Show', car %></td>
         <td><%= link_to 'Edit', edit_car_path(car) %></td>
       </tr>
